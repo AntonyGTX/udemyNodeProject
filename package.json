@@ -1,0 +1,18 @@
+{
+  "name": "udemy-node-tutorial",
+  "version": "1.0.0",
+  "description": "complete node project",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon testServer.js"
+  },
+  "author": "Suresh Antony",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
