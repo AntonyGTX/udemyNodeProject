@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Product</title>
+    <link rel="stylesheet" href="/addProduct.css">
+</head>
+<body>
+    <header class="main_header">
+        <nav class="main_navigation">
+            <ul class="main_list">
+                <li class="main_list_items"><a  href="/">Shop</a></li>
+                <li class="main_list_items"><a class="active" href="/admin/Add_products">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="Product_content">
+        <form action="/admin/Add_products" method="POST" class="product_form">
+            <div class="form_control">
+                <label for="product">Title</label>
+                <input type="text" name="Title">
+            </div>
+            <button type="submit" class="product_button">Add product</button>
+        </form>
+    </main>
+</body>
+</html>

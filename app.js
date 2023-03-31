@@ -1,42 +1,54 @@
-//when using express this is not required 
-// const http = require('http');
-
-
+//IMPORTS
 const express = require('express');
+const bodyParser = require('body-parser')
+
+//importing path package to handle the routes
+const path = require('path')
 
 const app = express();
 
-// We don't need this middleware now when we are creating different routes
-// app.use((req, res, next) => {
-//     console.log('i am going to next middleWare');
-//     //without next it won't go to next middleWare
-//     next(); 
+//importingAdmin.js
+const addminRoutes = require('./routes/admin')
+//importing shop.js
+const shopRoutes = require('./routes/shop')
+
+app.use(bodyParser.urlencoded({extended: false}));
+
+//serving static files
+app.use(express.static(path.join(__dirname, 'public')))
+
+//order maters don't change the order and by just using the variable in the app.use we are abobe to import the logic from an different page
+//This filter /admin is used for directing the page through this
+app.use('/admin', addminRoutes);
+
+//exported the main page roues
+app.use(shopRoutes);
+
+
+
+//creating 404 page
+// app.use((req,res,next) => {
+//     res.status(404).send(`
+//         <h1  
+//             style="
+//                 text-align: center;
+//                 font-weight: bold;
+//                 margin-top: 50px;
+//                 color: red;
+//                 font-size: 30px;
+//             ">
+//             Page Not Found
+//         </h1>
+//         <hr>
+//     `)
 // })
 
-
-//the function that always run
-app.use('/', (req, res, next) => {
-    console.log('this always run');
-    next()
+//sending page from html
+app.use((req, res, next) => {
+    res.status(404).sendFile(path.join(__dirname, '/', 'Views', '404.html'))
 })
 
-app.use('/products', (req, res, next) => {
-    console.log('i am second middleWare');
-    res.send('<h1>You sre directed to prododuct page</h1>');
-})
 
-app.use('/welcome', (req, res, next) => {
-    console.log('i am second middleWare');
-    res.send('<h1>Hello From express</h1>');
-})
 
-//using express for creating server
+
 app.listen(3000);
-
-//-----------------------------------------------------------------------
-//old way of creating server
-// const server = http.createServer(app);
-// server.listen(3000);
-//----------------------------------------------------------------------
-
-
