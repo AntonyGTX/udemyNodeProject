@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{newTitle} 
+        link(rel="stylesheet", href="/css/shop.css")
+        link(rel="stylesheet", href="/css/addProduct.css")
+    body 
+        header.main_header
+            nav.main_navigation
+                ul.main_list
+                    li.main_list_items
+                        a.active(href="/") shop 
+                    li.main_list_items
+                        a(href="/admin/Add_products") Add Product
+        
+        main.shop_content
+            if productArray.length > 0
+                .grid 
+                    each product in productArray 
+                        artical.card.product_item 
+                            header.card_header 
+                                h1.product_title #{product.title}
+                            div.card_image 
+                                img(
+                                    src="https://www.91-cdn.com/hub/wp-content/uploads/2022/04/Samsung-Galaxy-M33-5G-india-launch.jpg",
+                                    alt="smartPhone")
+                            .card_content 
+                                h2.product_price $125
+                                p.product_description best smartphone in the market 
+                            card.action 
+                                button.btn Add To Cart
+            else 
+                h1 No Products To Display    
+                    

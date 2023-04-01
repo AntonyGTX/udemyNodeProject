@@ -8,7 +8,7 @@ const path = require('path')
 const app = express();
 
 //importingAdmin.js
-const addminRoutes = require('./routes/admin')
+const adminData = require('./routes/admin')
 //importing shop.js
 const shopRoutes = require('./routes/shop')
 
@@ -19,7 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 //order maters don't change the order and by just using the variable in the app.use we are abobe to import the logic from an different page
 //This filter /admin is used for directing the page through this
-app.use('/admin', addminRoutes);
+app.use('/admin', adminData.routes);
+//changing addminRoutes to adminData
 
 //exported the main page roues
 app.use(shopRoutes);
@@ -45,7 +46,7 @@ app.use(shopRoutes);
 
 //sending page from html
 app.use((req, res, next) => {
-    res.status(404).sendFile(path.join(__dirname, '/', 'Views', '404.html'))
+    res.status(404).sendFile(path.join(__dirname, '/', 'htmlViews', '404.html'))
 })
 
 

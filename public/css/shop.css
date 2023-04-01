@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main_header{
+    background-color: #2b2929;
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+.main_navigation{
+    font-size: 16px;
+ 
+}
+
+.main_list{
+    display: flex;
+    justify-content:start;
+    list-style-type: none;
+}
+
+.main_list_items a{
+    text-decoration: none;
+    margin: 0 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.main_list_items a:active,
+.main_list_items a.active{
+    color: grey;
+}
+
+.shop_content{
+    padding: 20px 40px;
+    
+}
+
+.shop_header_text{
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid{
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 300px 300px 300px;
+    grid-column-gap: 100px;
+   
+}
+
+.card{
+    width: 300px;
+    height: 500px;
+    background-color: brown;
+    padding: 25px;
+    text-align: center;
+    box-shadow: black 3px 3px 8px;
+    border-radius: 3px;
+}
+
+.product_item{
+    text-decoration: none;
+    margin: 0 5px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.card_header{
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.product_title{
+    font-family: sans-serif;
+    color: white;
+}
+
+.card_image img{
+    width: 300px;
+    height: 250px;
+}
+
+.card_content{
+    font-family: sans-serif;
+}
+
+.action{
+    width: 130px;
+}
+
+.btn{
+    padding: 4px  10px;
+    text-align: center;
+    margin: 0 10px;
+    width: 120px;
+    background-color: rgb(6, 6, 118);
+    color: white;
+    font-family: sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+}
