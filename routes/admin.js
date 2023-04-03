@@ -16,8 +16,13 @@ const products = [];
 
 
 // using html pages
+// router.get('/Add_products', (req, res, next) => {
+//     res.sendFile(path.join(__dirname, "../", 'htmlViews', 'add-product.html'))
+// })
+
+//using pug template
 router.get('/Add_products', (req, res, next) => {
-    res.sendFile(path.join(__dirname, "../", 'htmlViews', 'add-product.html'))
+    res.render('addProducts', { newTitle: 'Add Products', path: 'Dynamically_choicing_routes'})
 })
 
 //this method or page only acessed with the /admin route mentioned in app.js

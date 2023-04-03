@@ -1,0 +1,35 @@
+//- doctype html
+//- html(lang="en")
+//-     head
+//-         meta(charset="UTF-8")
+//-         meta(http-equiv="X-UA-Compatible", content="IE=edge")
+//-         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-         title #{newTitle}
+//-         link(rel="stylesheet", href="/css/shop.css")
+//-         link(rel="stylesheet", href="/css/addProduct.css")
+//-     body 
+//-         header.main_header
+//-             nav.main_navigation
+//-                 ul.main_list
+//-                     li.main_list_items
+//-                         a(href="/") shop 
+//-                     li.main_list_items
+//-                         a.active(href="/admin/Add_products") Add Product
+
+//- importing above template from main layout so above code is not required
+extends layout/main-layout.pug
+
+block styles
+        link(rel="stylesheet", href="/css/shop.css")
+        link(rel="stylesheet", href="/css/addProduct.css")
+
+block content
+    main.Product_content
+        form.product_form(action="/admin/Add_products", method="POST") 
+            h1.form_header Add your product
+            hr
+            .form_control
+                label(for="product") Title
+                input(type="text", name="title")
+            button.product_button(type="submit") Add SmartPhones
+

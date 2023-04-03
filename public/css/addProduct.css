@@ -71,12 +71,14 @@ body{
     padding: 4px  10px;
     text-align: center;
     margin: 0 10px;
-    width: 120px;
+    width: 150px;
     background-color: rgb(6, 6, 118);
     color: white;
     font-family: sans-serif;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 14px;
+    
 }
 
 .product_button:hover{

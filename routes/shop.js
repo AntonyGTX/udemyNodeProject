@@ -22,7 +22,7 @@ const adminData = require('./admin');
 router.get('/', (req, res, next) => { 
     const product = adminData.products;
     //now other than passing the template in res we also now pass an object that get its source from "admin.products"
-    res.render('shop', {productArray: product, newTitle: 'shop'})
+    res.render('shop', {productArray: product, newTitle: 'shop', path: 'Route_to_shop'})
 })
 
 
